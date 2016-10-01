@@ -5,6 +5,7 @@
   "main": "build/main/app.js",
   "scripts": {
     "build": "webpack",
+    "build:watch": "webpack --watch",
     "start" : "electron ./build/main/app.js",
     "pack:all" : "electron-packager ./build git-note --out=dist --all --overwrite",
     "pack:mac" : "electron-packager ./build git-note --out=dist --platform=darwin --arch=x64 --version=1.4.1 --overwrite",
