@@ -1,0 +1,38 @@
+{
+  "name": "git-note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main/app.js",
+  "scripts": {
+    "build": "webpack",
+    "start" : "electron ./build/main/app.js",
+    "pack:all" : "electron-packager ./build git-note --out=dist --all --overwrite",
+    "pack:mac" : "electron-packager ./build git-note --out=dist --platform=darwin --arch=x64 --version=1.4.1 --overwrite",
+    "pack:win" : "electron-packager ./build git-note --out=dist --platform=win32 --arch=x64 --version=1.4.1 --overwrite",
+    "pack:lx" : "electron-packager ./build git-note --out=dist --platform=linux --arch=x64 --version=1.4.1 --overwrite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasum/git-note.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nasum/git-note/issues"
+  },
+  "homepage": "https://github.com/nasum/git-note#readme",
+  "devDependencies": {
+    "babel-core": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "electron-packager": "^8.0.0",
+    "electron-prebuilt": "^1.4.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "react": "^15.3.2"
+  }
+}
