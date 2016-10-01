@@ -35,6 +35,9 @@
     "semi": [
       "error",
       "never"
+    ],
+    "node/no-unsupported-features": [
+      "error", {"version": 6}
     ]
   },
   "globals": {
