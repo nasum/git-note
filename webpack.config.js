@@ -15,6 +15,13 @@ module.exports = {
     extensions: ['', '.webpack.js', '.web.js', '.js']
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      }
+    ],
     loaders: [
       {
         test: /\.js$/,
@@ -25,6 +32,9 @@ module.exports = {
         }
       }
     ]
+  },
+  eslint: {
+    configFile: './.eslintrc.json'
   },
   node: {
     __dirname: false
