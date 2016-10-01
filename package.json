@@ -34,10 +34,14 @@
     "eslint-loader": "^1.5.0",
     "eslint-plugin-node": "^2.1.2",
     "eslint-plugin-react": "^6.3.0",
+    "materialize-css": "^0.97.7",
+    "node-sass": "^3.10.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
-    "react": "^15.3.2"
+    "react": "^15.3.2",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0"
   }
 }
