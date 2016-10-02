@@ -45,18 +45,18 @@
     "eslint-plugin-react": "^6.3.0",
     "flow-bin": "^0.33.0",
     "flowtype-loader": "^0.2.1",
-    "materialize-css": "^0.97.7",
     "node-sass": "^3.10.1",
-    "redux-thunk": "^2.1.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "materialize-css": "^0.97.7",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
-    "redux-logger": "^2.6.1"
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
   }
 }

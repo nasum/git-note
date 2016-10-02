@@ -18,12 +18,12 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: "eslint-loader"
       },
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         loader: "flowtype",
         exclude: /node_modules/
       }
