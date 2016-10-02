@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var ExternalsPlugin = webpack.ExternalsPlugin;
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var FlowtypePlugin = require('flowtype-loader/plugin');
 
 module.exports = {
   entry: {
@@ -20,6 +21,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader"
+      },
+      {
+        test: /\.js$/,
+        loader: "flowtype",
+        exclude: /node_modules/
       }
     ],
     loaders: [
@@ -46,6 +52,7 @@ module.exports = {
     ]),
     new CopyWebpackPlugin([
       { from: 'src/index.html', to: 'index.html' }
-    ])
+    ]),
+    new FlowtypePlugin()
   ]
 }
