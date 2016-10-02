@@ -13,7 +13,7 @@ module.exports = {
     filename: "[name].js"
   },
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.js']
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
   module: {
     preLoaders: [
@@ -30,11 +30,11 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         exclude: /(node_modules)/,
         loader: 'babel', // 'babel-loader' is also a valid name to reference
         query: {
-          presets: ['es2015']
+          presets: ['es2015','react']
         }
       }
     ]

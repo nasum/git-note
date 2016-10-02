@@ -6,7 +6,10 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:node/recommended"
+    "plugin:node/recommended",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended",
+    "airbnb"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,7 +20,8 @@
   },
   "plugins": [
     "react",
-    "node"
+    "node",
+    "flowtype"
   ],
   "rules": {
     "indent": [
@@ -40,7 +44,11 @@
       "error", {"version": 6}
     ]
   },
-  "globals": {
-    "$": false
+  "settings": {
+    "import/resolver": {
+      "webpack":{
+         "config": "webpack.config.js"
+      }
+    }
   }
 }
