@@ -12,6 +12,7 @@ module.exports = {
     path: "build",
     filename: "[name].js"
   },
+  devtool: 'source-map',
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
@@ -36,6 +37,10 @@ module.exports = {
         query: {
           presets: ['es2015','react']
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
   },
