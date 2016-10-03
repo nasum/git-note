@@ -6,7 +6,7 @@ var FlowtypePlugin = require('flowtype-loader/plugin');
 module.exports = {
   entry: {
     "main/app": './src/main/app.js',
-    "rendler/index": './src/rendler/index.js'
+    "rendler/index": './src/rendler/index.jsx'
   },
   output: {
     path: "build",
