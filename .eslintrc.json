@@ -21,7 +21,8 @@
   "plugins": [
     "react",
     "node",
-    "flowtype"
+    "flowtype",
+    "import"
   ],
   "rules": {
     "indent": [
@@ -49,6 +50,12 @@
       "webpack":{
          "config": "webpack.config.js"
       }
-    }
+    },
+    "import/core-modules": [
+      "electron"
+    ]
+  },
+  "globals": {
+    "electron": true
   }
 }
