@@ -14,7 +14,7 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.scss']
   },
   module: {
     preLoaders: [
@@ -41,6 +41,22 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?mimetype=image/svg+xml'
+      },
+      {
+        test: /\.woff(\d+)?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?mimetype=application/font-woff'
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?mimetype=application/font-woff'
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?mimetype=application/font-woff'
       }
     ]
   },
