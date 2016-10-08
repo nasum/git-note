@@ -4,12 +4,16 @@ const initState = {
   open: false
 }
 
+function toggle(state, action) {
+  return Object.assign({}, state, {
+    open: action.open
+  });
+}
+
 export default function MainReducer(state = initState, action) {
   switch (action.type) {
-    case mainAction.OPEN:
-      state.open = action.oepn
-      return Object.assign({}, state);
-
+    case mainAction.TOGGLE:
+      return toggle(state, action)
     default:
       return state
    }

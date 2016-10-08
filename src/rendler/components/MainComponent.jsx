@@ -8,6 +8,11 @@ import MenuItem from 'material-ui/MenuItem';
 class MainContainer extends React.Component {
   constructor(props) {
     super(props)
+    this._handleToggle = this._handleToggle.bind(this);
+  }
+
+  _handleToggle(e) {
+    this.props.mainActions.toggle(this.props.MainReducer.open)
   }
 
   render() {
@@ -17,14 +22,17 @@ class MainContainer extends React.Component {
     return (
       <MuiThemeProvider>
         <div id="page_container">
-          <Drawer open={open}>
+          <Drawer
+            open={open}
+            docked={false}
+            onRequestChange={this._handleToggle}>
             <MenuItem>Menu Item</MenuItem>
             <MenuItem>Menu Item 2</MenuItem>
           </Drawer>
           <AppBar
             title="Title"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
-            onLeftIconButtonTouchTap={this.handleToggle}
+            onLeftIconButtonTouchTap={this._handleToggle}
           />
           <div className="main-container">
             {this.props.children}

@@ -1,15 +1,7 @@
-export const OPEN = 'OPEN'
-function open() {
+export const TOGGLE = 'TOGGLE'
+export function toggle(flg) {
   return {
-    type: OPEN,
-    open: true
-  }
-}
-
-export const CLOSE = 'CLOSE'
-function close() {
-  return {
-    type: CLOSE,
-    open: false
+    type: TOGGLE,
+    open: !flg
   }
 }
