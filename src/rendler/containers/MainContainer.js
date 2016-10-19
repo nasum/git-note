@@ -1,18 +1,21 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as mainctions from '../actions/MainAction'
+import * as mainActions from '../actions/MainAction'
+import * as codeActions from '../actions/CodeAction'
 import mainComponent from '../components/MainComponent'
 
 function mapDispatchToProps(dispatch) {
   return {
-    mainActions: bindActionCreators(mainctions, dispatch)
+    mainActions: bindActionCreators(mainActions, dispatch),
+    codeActions: bindActionCreators(codeActions, dispatch)
   }
 }
 
 function mapStateToProps(state) {
-  const { MainReducer } = state
+  const { MainReducer, CodeReducer } = state
   return {
-    MainReducer
+    MainReducer,
+    CodeReducer
   }
 }
 

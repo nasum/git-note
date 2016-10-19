@@ -6,6 +6,7 @@ import configureStore from './store/ConfigureStore'
 import mainContainer from './containers/MainContainer'
 import sideMenu from './components/SideMenu'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import codemirrorStyle from "codemirror/lib/codemirror.css"
 
 require("../style/reset.scss")
 require("roboto-fontface/css/mixins.scss")
@@ -18,7 +19,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={mainContainer}>
-        <IndexRoute component={sideMenu} />
+        <IndexRoute />
       </Route>
     </Router>
   </Provider>,
