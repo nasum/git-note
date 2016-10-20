@@ -2,6 +2,9 @@ import electron from 'electron'
 
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
+const dialog = electron.dialog
+
+const dir_path
 
 let mainWindow = null
 
@@ -17,4 +20,6 @@ app.on('ready', () => {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  dir_path = dialog.showOpenDialog(mainWindow, {title: 'プロジェクトを開いてください',properties: ['openDirectory', 'createDirectory']})
 })
