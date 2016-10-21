@@ -23,7 +23,7 @@ app.on('ready', () => {
     mainWindow = null
   })
   initMenu(Menu)
-  dir_path = dialog.showOpenDialog(mainWindow, {title: 'プロジェクトを開いてください',properties: ['openDirectory', 'createDirectory']})
+  //dir_path = dialog.showOpenDialog(mainWindow, {title: 'プロジェクトを開いてください',properties: ['openDirectory', 'createDirectory']})
 })
 
 function initMenu(Menu){

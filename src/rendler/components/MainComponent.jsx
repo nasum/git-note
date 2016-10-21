@@ -11,11 +11,16 @@ class MainContainer extends React.Component {
   constructor(props) {
     super(props)
     this._handleToggle = this._handleToggle.bind(this)
+    this._handleOpenFolder = this._handleOpenFolder.bind(this)
     this._updateCode = this._updateCode.bind(this)
   }
 
   _handleToggle(e) {
     this.props.mainActions.toggle(this.props.MainReducer.open)
+  }
+
+  _handleOpenFolder(e){
+    this.props.mainActions.openFolder()
   }
 
   _updateCode(code) {
@@ -40,8 +45,7 @@ class MainContainer extends React.Component {
             open={ open }
             docked={ false }
             onRequestChange={this._handleToggle}>
-            <MenuItem>Menu Item</MenuItem>
-            <MenuItem>Menu Item 2</MenuItem>
+            <MenuItem onTouchTap={this._handleOpenFolder}>Open</MenuItem>
           </Drawer>
           <AppBar
             title="Title"

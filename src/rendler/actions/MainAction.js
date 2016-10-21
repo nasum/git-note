@@ -5,3 +5,10 @@ export function toggle(flg) {
     open: !flg
   }
 }
+
+export const OPEN_FOLDER = 'OPEN_FOLDER'
+export function openFolder() {
+  return {
+    type: OPEN_FOLDER
+  }
+}
