@@ -11,7 +11,9 @@ function toggle(state, action) {
 }
 
 function openFolder(state, action) {
-  return Object.assign({}, state)
+  return Object.assign({}, state, {
+    path: action.path
+  })
 }
 
 export default function MainReducer(state = initState, action) {

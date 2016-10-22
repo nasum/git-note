@@ -29,7 +29,8 @@ class MainContainer extends React.Component {
 
   render() {
     const {
-      open
+      open,
+      path
     } = this.props.MainReducer
     const {
       code
@@ -54,6 +55,9 @@ class MainContainer extends React.Component {
           />
           <div>
             <Codemirror value={ code } onChange={ this._updateCode } options={options}  />
+          </div>
+          <div>
+            { path }
           </div>
         </div>
       </MuiThemeProvider>

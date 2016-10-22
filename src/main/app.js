@@ -26,7 +26,7 @@ app.on('ready', () => {
 })
 
 ipc.on('OPEN_FOLDER', (event, args) => {
-  dir_path = dialog.showOpenDialog(mainWindow, { title: 'プロジェクトを開いてください', properties: ['openDirectory', 'createDirectory'] })
+  event.returnValue = dialog.showOpenDialog(mainWindow, { title: 'プロジェクトを開いてください', properties: ['openDirectory', 'createDirectory'] })
 })
 
 function initMenu(Menu){

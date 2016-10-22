@@ -11,8 +11,9 @@ export function toggle(flg) {
 
 export const OPEN_FOLDER = 'OPEN_FOLDER'
 export function openFolder() {
-  ipc.send('OPEN_FOLDER')
+  const pathArray = ipc.sendSync('OPEN_FOLDER')
   return {
-    type: OPEN_FOLDER
+    type: OPEN_FOLDER,
+    path: pathArray[0]
   }
 }
