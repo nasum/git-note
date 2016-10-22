@@ -6,6 +6,7 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import Codemirror from 'react-codemirror'
 import markdown from 'codemirror/mode/markdown/markdown'
+import FileTree from './FileTree'
 
 class MainContainer extends React.Component {
   constructor(props) {
@@ -30,7 +31,8 @@ class MainContainer extends React.Component {
   render() {
     const {
       open,
-      path
+      files,
+      dirs,
     } = this.props.MainReducer
     const {
       code
@@ -56,9 +58,7 @@ class MainContainer extends React.Component {
           <div>
             <Codemirror value={ code } onChange={ this._updateCode } options={options}  />
           </div>
-          <div>
-            { path }
-          </div>
+          <FileTree files={ files } dirs={ dirs } />
         </div>
       </MuiThemeProvider>
     )

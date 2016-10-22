@@ -4,7 +4,6 @@ import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import configureStore from './store/ConfigureStore'
 import mainContainer from './containers/MainContainer'
-import sideMenu from './components/SideMenu'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import codemirrorStyle from "codemirror/lib/codemirror.css"
 

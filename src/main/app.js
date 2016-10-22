@@ -1,4 +1,5 @@
 import electron from 'electron'
+import fs from 'fs'
 
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
@@ -26,7 +27,27 @@ app.on('ready', () => {
 })
 
 ipc.on('OPEN_FOLDER', (event, args) => {
-  event.returnValue = dialog.showOpenDialog(mainWindow, { title: 'プロジェクトを開いてください', properties: ['openDirectory', 'createDirectory'] })
+  const path = dialog.showOpenDialog(mainWindow, { title: 'open folder', properties: ['openDirectory', 'createDirectory'] })[0]
+  let files = []
+  let dirs = []
+  fs.readdir(path, function(err, find_files){
+    find_files.forEach(function(file){
+        var _type = "";
+        if(fs.statSync(path + "/" + file).isFile()){
+          files.push(path + "/" + file)
+        }else{
+          dirs.push(path + "/" + file)
+        }
+    });
+    event.sender.send('CATCH_RESPONSE', {
+      files: files,
+      dirs: dirs,
+    })
+  })
+})
+
+ipc.on('SHOW_FILES', (event, args) => {
+
 })
 
 function initMenu(Menu){

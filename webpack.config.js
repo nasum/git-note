@@ -12,6 +12,7 @@ module.exports = {
     path: "build",
     filename: "[name].js"
   },
+  target: "node",
   devtool: 'source-map',
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.scss']
