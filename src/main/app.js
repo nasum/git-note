@@ -1,10 +1,10 @@
 import electron from 'electron'
-import * as menu from './menu'
 
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const dialog = electron.dialog
-const {Menu} = require('electron')
+const Menu = electron.Menu
+const ipc = electron.ipcMain
 
 let dir_path = ""
 
@@ -23,7 +23,10 @@ app.on('ready', () => {
     mainWindow = null
   })
   initMenu(Menu)
-  //dir_path = dialog.showOpenDialog(mainWindow, {title: 'プロジェクトを開いてください',properties: ['openDirectory', 'createDirectory']})
+})
+
+ipc.on('OPEN_FOLDER', (event, args) => {
+  dir_path = dialog.showOpenDialog(mainWindow, { title: 'プロジェクトを開いてください', properties: ['openDirectory', 'createDirectory'] })
 })
 
 function initMenu(Menu){
