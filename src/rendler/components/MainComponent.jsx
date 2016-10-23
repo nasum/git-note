@@ -58,7 +58,7 @@ class MainContainer extends React.Component {
           <div>
             <Codemirror value={ code } onChange={ this._updateCode } options={options}  />
           </div>
-          <FileTree files={ files } dirs={ dirs } />
+          <FileTree files={ files } dirs={ dirs } fileTreeActions={ this.props.fileTreeActions }/>
         </div>
       </MuiThemeProvider>
     )
