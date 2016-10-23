@@ -22,8 +22,9 @@ export const OPEN_FOLDER = 'OPEN_FOLDER'
 export function openFolder() {
   return (dispatch) => {
     ipc.send('OPEN_FOLDER')
-    ipc.on('CATCH_RESPONSE', function(enets, args){
+    ipc.on('CATCH_RESPONSE', function(events, args){
       dispatch(setFilesAndDirs(args))
+      dispatch(toggle(true))
     })
     return {
       type: OPEN_FOLDER,
