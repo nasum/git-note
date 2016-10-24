@@ -9,11 +9,11 @@ import {blue500, yellow600} from 'material-ui/styles/colors';
 class FileTree extends React.Component {
   constructor(props) {
     super(props)
-    this._handleOpenFile = this._handleOpenFile.bind(this)
+    this._handleSelectFile = this._handleSelectFile.bind(this)
   }
 
-  _handleOpenFile(file_path) {
-    this.props.fileTreeActions.openFile(file_path)
+  _handleSelectFile(file_path) {
+    this.props.fileTreeActions.selectFile(file_path)
   }
 
   render() {
@@ -27,7 +27,7 @@ class FileTree extends React.Component {
                 rightIcon={<ActionInfo />}
                 primaryText={ file }
                 key={ index }
-                onTouchTap={this._handleOpenFile.bind(this, file)}
+                onTouchTap={this._handleSelectFile.bind(this, file)}
               />
             })
           }

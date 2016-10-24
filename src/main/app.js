@@ -46,8 +46,13 @@ ipc.on('OPEN_FOLDER', (event, args) => {
   })
 })
 
-ipc.on('SHOW_FILES', (event, args) => {
-
+ipc.on('OPEN_FILE', (event, args) => {
+  fs.readFile(args, 'utf8', function (err, text) {
+    event.sender.send('CATCH_FILE', {
+      text: text,
+      err: err,
+    })
+  })
 })
 
 function initMenu(Menu){
