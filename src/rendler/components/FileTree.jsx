@@ -17,11 +17,12 @@ class FileTree extends React.Component {
   }
 
   render() {
+    const { files } = this.props
     return (
       <div>
         <List>
           {
-            this.props.files.map((file, index) => {
+            files.map((file, index) => {
               return <ListItem
                 leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={blue500} />}
                 rightIcon={<ActionInfo />}
